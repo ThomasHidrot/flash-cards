@@ -98,7 +98,10 @@
                 EXW
             </div>
             <div class="flashcard-back">
-                Marchandise Emballage
+                <div class="flashcard-content">
+                    <p>Marchandise</p>
+                    <p>+ Emballage</p>
+                </div>
             </div>
         </div>
     </div>
@@ -128,16 +131,16 @@
                 switch (flashcardFront.textContent.trim()) {
                     case 'EXW':
                         flashcardFront.textContent = 'Car';
-                        flashcardBack.textContent = 'Voiture';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Voiture</p><p>+ Auto</p></div>';
                         previousButton.style.display = 'inline-block'; // Show the Previous button
                         break;
                     case 'Car':
                         flashcardFront.textContent = 'vélo';
-                        flashcardBack.textContent = 'Bicyclette';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Bicyclette</p></div>';
                         break;
                     default:
                         flashcardFront.textContent = 'EXW';
-                        flashcardBack.textContent = 'Marchandise Emballage';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Marchandise</p><p>+ Emballage</p></div>';
                         previousButton.style.display = 'none'; // Hide the Previous button
                 }
             }
@@ -164,16 +167,16 @@
                 switch (flashcardFront.textContent.trim()) {
                     case 'Car':
                         flashcardFront.textContent = 'EXW';
-                        flashcardBack.textContent = 'Marchandise Emballage';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Marchandise</p><p>+ Emballage</p></div>';
                         previousButton.style.display = 'none'; // Hide the Previous button
                         break;
                     case 'vélo':
                         flashcardFront.textContent = 'Car';
-                        flashcardBack.textContent = 'Voiture';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Voiture</p><p>+ Auto</p></div>';
                         break;
                     default:
                         flashcardFront.textContent = 'EXW';
-                        flashcardBack.textContent = 'Marchandise Emballage';
+                        flashcardBack.innerHTML = '<div class="flashcard-content"><p>Marchandise</p><p>+ Emballage</p></div>';
                         previousButton.style.display = 'none'; // Hide the Previous button
                 }
             }
