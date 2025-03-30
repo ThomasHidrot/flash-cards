@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Flashcard</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .flashcard {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flashcard.is-flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front,
+        .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .flashcard-front {
+            background-color: #49da1c;
+            font-weight: bold;
+        }
+
+        .flashcard-back {
+            background-color: #4caf50;
+            color: white;
+            font-size: 24px;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard" onclick="flipCard(this)">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                EXW
+            </div>
+            <div class="flashcard-back">
+                <div>Marchandise</div>
+                <div>Emballage</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="next-button" onclick="goToNextFlashcard()">Next Flashcard</button>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('is-flipped');
+        }
+
+        function goToNextFlashcard() {
+            window.location.href = 'car-flashcard.html';
+        }
+    </script>
+</body>
+</html>
